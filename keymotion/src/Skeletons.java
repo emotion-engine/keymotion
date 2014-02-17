@@ -158,8 +158,8 @@ public class Skeletons implements Datas
 	  if (check3Points(SkeletonJoint.RIGHT_SHOULDER, SkeletonJoint.RIGHT_ELBOW, SkeletonJoint.RIGHT_HAND) && 
 			  check3Points(SkeletonJoint.RIGHT_HAND, SkeletonJoint.RIGHT_SHOULDER, SkeletonJoint.RIGHT_HIP))
 		  return true;
-	  if (check3Points(SkeletonJoint.RIGHT_KNEE, SkeletonJoint.WAIST, SkeletonJoint.LEFT_KNEE))
-		  return true;
+//	  if (check3Points(SkeletonJoint.RIGHT_KNEE, SkeletonJoint.WAIST, SkeletonJoint.LEFT_KNEE))
+//		  return true;
 	  
 	  return false;
   }

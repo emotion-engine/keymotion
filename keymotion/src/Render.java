@@ -9,6 +9,7 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
 	public boolean isInCollision, explosion, isRunning;
 	public Bubble[] bubbles;
 	public Bubble bigBubble;
+	boolean etat;
 	BufferStrategy buffer;
 	KeyMotion key;
 	DynamicalStart dyn;
@@ -20,6 +21,7 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
 
 		isAttracted = false;
 		bigBubble = new Bubble(this, 200);
+
 		new Thread(this).start(); 
 		addKeyListener(this);
 	}
@@ -56,7 +58,7 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
         g2d.setColor(g2d.getBackground()); // clear background
         g2d.fillRect(0, 0, __WIDTH, __HEIGHT);
         
-        if (isDetected)
+        if (etat)
         	g2d.setColor(Color.GREEN);
         else 
         	g2d.setColor(Color.RED);
@@ -81,7 +83,10 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
         }
     }
 	
-	
+	public void setCurrentState(boolean b)
+	{
+		etat = b;
+	}
 
 	public void collision(double rbd) 
 	{

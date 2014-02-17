@@ -1,5 +1,4 @@
-// KeyMotion
-
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
@@ -21,6 +20,7 @@ public class KeyMotion extends JFrame implements Datas
 		bubbles = new Bubble[MAX_BUBBLES];
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(null);
+		
 		this.setUndecorated(true);
 	    this.setSize(this.getToolkit().getScreenSize());
 	    this.setLocationRelativeTo(null);
@@ -41,6 +41,8 @@ public class KeyMotion extends JFrame implements Datas
 		render.addBubbles(bubbles);
 	    setContentPane(render);
 		render.requestFocus();
+		
+		
 	    
 	}
 	

@@ -208,14 +208,9 @@ public class Tracker implements Runnable, Datas
 		return this.isSynchro;
 	}
 	
-	public int getCompteurS()
+	public int getCompteur()
 	{
 		return compteurSynchro;
-	}
-	
-	public int getCompteurD()
-	{
-		return compteurDesynchro;
 	}
 	
 	public void synchronize()
@@ -223,6 +218,7 @@ public class Tracker implements Runnable, Datas
 		
 		compteurSynchro++;
 		System.out.println("Compteur synchro : "+compteurSynchro);
+		render.setCurrentState(true);
 		if (compteurSynchro >= 50)
 		{
 			
@@ -240,6 +236,7 @@ public class Tracker implements Runnable, Datas
 	{
 		compteurSynchro--;
 		System.out.println("Compteur synchro : "+compteurSynchro);
+		render.setCurrentState(false);
 		if (compteurSynchro < 50)
 		{
 			
