@@ -122,9 +122,9 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
 	public void keyPressed(KeyEvent k) 
 	{
 		if (k.getKeyCode() == 39) // LEFT
-			acceleration(false);
+			isAttracted = etat = true;
 		else if (k.getKeyCode() == 37) // RIGHT
-			acceleration(true);
+			etat = false;
 		else if (k.getKeyCode() == 38) // UP
 			bigBubble.setExplosion(true);
 		else if (k.getKeyCode() == 40) // DOWN
