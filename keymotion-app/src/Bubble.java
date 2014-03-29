@@ -141,27 +141,29 @@ public class Bubble implements Runnable, Datas
 	  
 	  public void attraction(double px, double py, boolean b) 
 	  {
-		  	if (b)
-		  		divisor--;
-		  	else 
-		  		divisor++;
-		  	
 		  	double dx= px - this.x;
-		  	double dy = py - this.y;	  	
+		  	double dy = py - this.y;	
 		  	
-		  	 if (Math.abs(dx) > 10) 
-		  	 {
-		  		vx += dx * easing/divisor;
-		  	 }
-		  	 if (Math.abs(dy) > 10) 
-		  	 {
-		  		vy += dy * easing/divisor;
-		     }
+		  	if (b)
+		  	{
+		  		divisor--;
+		  		if (Math.abs(dx) > 10) 
+				  	vx += dx * easing/divisor;
+				if (Math.abs(dy) > 10) 
+				  	vy += dy * easing/divisor;
+		  	}
+		  	else 
+		  	{
+		  		divisor++;
+		  		 if (Math.abs(dx) > 10) 
+				  	vx -= dx * easing/divisor;
+				 if (Math.abs(dy) > 10) 
+				  	vy -= dy * easing/divisor;
+		  	} 	
 	  }  
 	  
 	public void setExplosion(boolean b)
 	{
-		System.out.println("4");
 		this.explosion = b;
 	}
 	 
