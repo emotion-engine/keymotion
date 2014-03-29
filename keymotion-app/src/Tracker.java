@@ -53,19 +53,19 @@ public class Tracker implements Runnable, Datas
 	    msgFont = new Font("SansSerif", Font.BOLD, 18);
 	    compteurSynchro = 0;
 	    compteurDesynchro = 0;
-	    configurationOpenNI();
-	    
-	    depthValues = new float[MAX_DEPTH_SIZE];
-
-	    imageWidth = depthMD.getFullXRes();
-	    imageHeight = depthMD.getFullYRes();
-	    System.out.println("Image dimensions (" + imageWidth + ", " +
-	                                              imageHeight + ")");
-	    // Crée un tableau d'octets en fonction du nombre de pixels et du codage en bits de chacun d'entre eux
-	    imageInBytes = new byte[imageWidth * imageHeight * 3];
-	    
-	    // Lance le processus qui met à jour les données à chaque variation dans l'image
-	    new Thread(this).start(); 
+//	    configurationOpenNI();
+//	    
+//	    depthValues = new float[MAX_DEPTH_SIZE];
+//
+//	    imageWidth = depthMD.getFullXRes();
+//	    imageHeight = depthMD.getFullYRes();
+//	    System.out.println("Image dimensions (" + imageWidth + ", " +
+//	                                              imageHeight + ")");
+//	    // Crée un tableau d'octets en fonction du nombre de pixels et du codage en bits de chacun d'entre eux
+//	    imageInBytes = new byte[imageWidth * imageHeight * 3];
+//	    
+//	    // Lance le processus qui met à jour les données à chaque variation dans l'image
+//	    new Thread(this).start(); 
 	}
 	
 	/* Création du contexte, gestion de la profondeur, des données de profondeur, 
