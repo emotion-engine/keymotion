@@ -18,13 +18,16 @@ public class Bubble implements Runnable, Datas
 	{
 		needBubble = true;
 		render= v;
-		diametre = 20;
-		x = (Math.random()*(__WIDTH-diametre)+diametre);
-		y =(Math.random()*(__HEIGHT-diametre)+diametre);
+		//diametre = 20;
+		diametre = 15;
+//		x = (Math.random()*(__WIDTH-diametre)+diametre);
+//		y =(Math.random()*(__HEIGHT-diametre)+diametre);
+		x = __WIDTH/2+diametre;
+		y = __HEIGHT/2+diametre;
 		vx = 0.01 * (Math.random() - 0.5);
         vy = 0.01 * (Math.random() - 0.5);
-		couleur = new Color((int) Math.random()*(200-20) + 20, (int) Math.random()*(200-20) + 20, (int) Math.random()*(200-20) + 20);
-		vitesse =  0.99;
+		couleur = new Color( (int) (Math.random()*(200) + 20) , (int) (Math.random()*(200) + 20) , (int) (Math.random()*(200) + 20) );
+		vitesse =  0.998;
 		divisor = 10000;
 		easing = 0.5;
 	}
@@ -33,11 +36,13 @@ public class Bubble implements Runnable, Datas
 	{
 			needBubble = true;	
 			render = v;	
-		 	x = __WIDTH/4;
-		    y = __HEIGHT/3;
+	//	 	x = __WIDTH/4;
+	//	    y = __HEIGHT/3;
+			x = __WIDTH/2-(d/2);
+			y = __HEIGHT/2-(d/2);
 		    vx = 0.01 * (Math.random() - 0.5);
 	        vy = 0.01 * (Math.random() - 0.5);
-		    couleur = new Color(0,0,0);
+		    couleur = new Color(44, 62, 80);
 		    alpha=50;
 		    vitesse=  0.60;
 		    diametre = d;
@@ -202,7 +207,9 @@ public class Bubble implements Runnable, Datas
 	{
 		this.diametre = d;
 	}
-	
+	public void setColor(Color c){
+		this.couleur = c;
+	}
 	public double getX() 
 	{
 		return this.x;

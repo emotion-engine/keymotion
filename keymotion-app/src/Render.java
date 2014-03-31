@@ -54,7 +54,8 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
 	private void draw(Graphics g )
     {
         Graphics2D g2d=(Graphics2D)g;
-        g2d.setColor(g2d.getBackground()); // clear background
+       // g2d.setColor(g2d.getBackground()); // clear background
+        g2d.setColor(new Color(0,0,0));
         g2d.fillRect(0, 0, __WIDTH, __HEIGHT);
         
         if (etat)
@@ -62,7 +63,7 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
         else 
         	g2d.setColor(Color.RED);
         
-        g2d.fillOval(900, 50, 20, 20);
+        g2d.fillRect(__WIDTH-10, 0, 10, 10);
         if (!isExploded)
         {
         	g2d.setColor(bigBubble.getColor());
@@ -109,9 +110,10 @@ public class Render extends JPanel implements Datas, Runnable, KeyListener
 		        bubbles[j].vy -= ay/rbd;
 		        bubbles[i].vx += ax/rbd;
 		        bubbles[i].vy += ay/rbd;
-		      }
+		       
 		    }
 		  }
+		}
 	}
 	
 	public void stopAcceleration()

@@ -32,10 +32,19 @@ public class KeyMotion extends JFrame implements Datas
 	    
 	    render = new Render(bufferStrategy);
 	    tracker = new Tracker(render);
-
-	    for (int i = 0; i < MAX_BUBBLES; i++)
+	    
+	    //Premiere bulles
+	    for (int i = 0; i < MAX_BUBBLES/2; i++)
 		{
 			bubbles[i] = new Bubble(render);
+			bubbles[i].setColor(__FLAT1_1);
+		}
+	    //Moitié des dernieres bulles
+	    for (int i = MAX_BUBBLES/2; i < MAX_BUBBLES; i++)
+		{
+			bubbles[i] = new Bubble(render);
+			bubbles[i].setColor(__FLAT2_1);
+
 		}
 	    
 		render.addBubbles(bubbles);
@@ -50,5 +59,6 @@ public class KeyMotion extends JFrame implements Datas
 	{
 		KeyMotion keymotion = new KeyMotion();
 	}
-
+	
+	
 }
